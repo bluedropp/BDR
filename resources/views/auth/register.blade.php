@@ -67,7 +67,7 @@
                             <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('age') }}</label>
     
                             <div class="col-md-6">
-                                <input id="age" type="smallInterger" class="form-control  @error('age') is-invalid @enderror" name="age" value="{{ old('age') }}" >
+                                <input id="age" type="Interger" class="form-control  @error('age') is-invalid @enderror" name="age" value="{{ old('age') }}" >
                                 @error('age')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -76,7 +76,53 @@
                                
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="height" class="col-md-4 col-form-label text-md-right">{{ __('height (in cm)') }}</label>
+    
+                            <div class="col-md-6">
+                                <input id="height" type="Interger" class="form-control  @error('height') is-invalid @enderror" name="height" value="{{ old('height') }}" >
+                                @error('height')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                               
+                            </div>
+                        </div>
+
                         
+                        <div class="form-group row">
+
+                            <label for="bio" class="col-md-4 col-form-label text-md-right">{{ __('enter a bio :') }}</label>
+                            <div class="col-md-6">
+                                <textarea class="form-control @error('bio') is-invalid @enderror" name="bio" value="{{ old('bio') }}" id="bio" rows="3"></textarea>
+                                @error('bio')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div> 
+                        </div>
+                       
+                        <div class="form-group row">
+                            <label for="smoking" class="col-md-4 col-form-label text-md-right">{{ __('Do you smoke ?') }}</label>
+
+                            <div class="control">
+                                <label class="radio">
+                                  <input type="radio" name="answer">
+                                  Yes
+                                </label>
+
+                                <label class="radio">
+                                  <input type="radio" name="answer">
+                                  No
+                                </label>
+                            </div>
+
+                        </div>
+
+
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
