@@ -20,7 +20,7 @@
 
             <div class="content">
                 <div class="title is-1">
-                    Le Bureau des Rencontres
+                    <a href="accueil">Le Bureau des Rencontres</a>
                 </div>
 
                 <div class="links subtitle is-3">
