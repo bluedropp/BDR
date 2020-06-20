@@ -26,4 +26,8 @@ Route::get('/accueil', function() {
   return view('accueil');
 });
 
+Route::get('/search', function() {
+  return view('search');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
