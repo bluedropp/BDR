@@ -8,9 +8,11 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         
         <!-- Styles -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
         <style>
             html, body {
                 background-color: #fff;
@@ -62,9 +64,20 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+
         </style>
     </head>
-    <body>
+    <body class="has-navbar-fixed-top">
       @yield ('content')
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>BDR</strong> by Loick DUMOULIN GREGOIRE, Mostafa KASSEM and Jean-Baptiste SCHNERB. The source code is licenced
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+          </p>
+        </div>
+      </footer>
     </body>
     </html>
