@@ -16,10 +16,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/register', function () {
-    return view('register');
-});
+
+
+
+Route::get('/profil/{profil}', 'ProfilController@show');
+
+Route::post('/home', 'ProfilController@store');
+
+Route::get('/register', 'ProfilController@create');
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/profil','ProfilController@profil')->name('profil');
+
+Route::get('/edit','ProfilController@edit');
+
+
