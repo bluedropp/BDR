@@ -48,6 +48,3 @@ Route::get('/premium/payement','PremiumController@create');
 Route::get('/profil','ProfilController@profil')->name('profil');
 
 Route::get('/edit','ProfilController@edit');
-
-
-

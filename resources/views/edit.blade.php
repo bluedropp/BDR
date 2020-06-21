@@ -3,6 +3,50 @@
 @extends('layouts.app')
 
 @section('content')
+
+<nav class="navbar is-fixed-top" role="navigation" aria-label="Main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <img src="{{ URL:asset('..\LogoBDR.png')}}" width="112" height="28">
+    </a>
+  </div>
+
+  <!-- Nécessite des liens pour les <a> -->
+  <div class="navbar-start">
+    <a class="navbar-item" href="discovery">
+      Discovery
+    </a>
+    <div class="navbar-item">
+      <a class="navbar-item" href="search">
+        Search
+      </a>
+
+    </div>
+  </div>
+  <div class="navbar-end">
+    <a class="navbar-item">
+      <a href="profil" class="button is-primary">
+        <span class="icon">
+          <i class="fas fa-user"></i>
+        </span>
+        <span>MyProfile</span>
+      </a>
+    </a>
+
+    <a class="navbar-item">
+      <a href="premium" class="button is-link">
+        <span class="icon">
+          <i class="fas fa-star"></i>
+        </span>
+        <span>Premium</span>
+      </a>
+    </a>
+
+  </div>
+
+
+</nav>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -12,10 +56,10 @@
                 <div class="card-body">
                     <form method="POST"  enctype="multipart/form-data">
                         @csrf
-                         
 
 
-                        
+
+
 
 
 
@@ -25,16 +69,16 @@
                             <div class="control">
                               <input id="name" class="input" type="text" placeholder="Entrez votre nom" required name="name" value="{{ Auth::user()->name }}">
                             </div>
-                            
+
                         </div>
-                        
+
                         <div class="field">
                             <label class="label">Prenom</label>
                             <div class="control">
                               <input id="prenom" class="input" type="text" placeholder="Entrez votre prenom" required name="prenom" value="{{ Auth::user()->prenom }}">
                             </div>
                         </div>
-                        
+
                         <div class="field">
                             <label class="label">Age</label>
                             <div class="control">
@@ -67,18 +111,18 @@
                                 <i class="fas fa-envelope"></i>
                               </span>
                               <span class="icon is-small is-right">
-                               
+
                               </span>
                             </div>
-                            
+
                         </div>
 
-                        
+
                          <div class="field">
                              <label class="label" > Choisissez une photo de profil </label>
                              <input multiple enctype="multipart/form-data" type="file" class="form" name="PP" id="PP" required>
                          </div>
-                        
+
 
 
                         <div class="field">
@@ -95,9 +139,9 @@
                               </span>
                             </div>
                         </div>
-                          
-                        
-                          
+
+
+
                           <div class="field">
                             <label class="label">Genre</label>
                             <div class="control">
@@ -125,25 +169,25 @@
                                   <option  value="art">bureau de l'art</option>
                                   <option  value="astronomie">bureau de l'astronomie</option>
                                   <option  value="jardinage">bureau du jardinage</option>
-                                  
+
                                 </select>
                               </div>
                             </div>
                           </div>
-                          
+
                           <div class="field">
                             <label class="label">Bio</label>
                             <div class="control">
                               <textarea id="bio"  class="textarea" placeholder="Entrez votre bio" required name="bio">{{ Auth::user()->bio }}</textarea>
                             </div>
                           </div>
-                          
-                          
-                          
+
+
+
                           <div class="field">
                             <div class="control">
                             <label class="label">Etes vous un fumeur ?</label>
-                        
+
                               <label class="radio">
                                 <input  value="1" type="radio" name="fumeur">
                                 Oui
@@ -154,7 +198,7 @@
                               </label>
                             </div>
                           </div>
-                          
+
                           <div class="field is-grouped">
                             <div class="control">
                                 <button type="submit" class="btn btn-primary">
@@ -162,11 +206,11 @@
                                 </button>
                             </div>
                           </div>
-                            
 
 
 
-                        
+
+
                     </form>
                 </div>
             </div>
@@ -174,25 +218,3 @@
     </div>
 </div>
 @endsection
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
