@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PremiumController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,8 +39,15 @@ Route::get('/search', function() {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/premium', function() {
+    return view('premium');
+});
+Route::get('/premium/payement','PremiumController@create');
+
+
 Route::get('/profil','ProfilController@profil')->name('profil');
 
 Route::get('/edit','ProfilController@edit');
+
 
 
