@@ -9,6 +9,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+        
 
         <!-- Styles -->
         <style>
@@ -63,6 +65,10 @@
                 margin-bottom: 30px;
             }
         </style>
+        <!-- Scripts -->
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <script src="https://kit.fontawesome.com/5bf6d38320.js" crossorigin="anonymous"></script>
+
     </head>
     <body>
       @yield ('content')

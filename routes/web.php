@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PremiumController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,7 @@ Route::get('/register', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/premium', function() {
+    return view('premium');
+});
+Route::get('/premium/payement','PremiumController@create');
