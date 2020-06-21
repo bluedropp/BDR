@@ -13,16 +13,15 @@ class ProfilController extends Controller
         $this->middleware('auth');
     }
 
-    public function index() { //renders a list of a ressource
+    public function index() { //renders a list of a ressource //affiche le home
         $users = DB::table('users')->get();
-        echo 'this is the index';
         return view('home', ['users' => $users]);
     }   
 
-    public function show($id)
+    public function show($pseudo)//affiche le profile de l'utilisateur actuel
     {
-        $user = DB::table(('users')->where('')
-         return view('profil', ['user' => $user]);
+        $user = DB::table('users')->where('pseudo',$pseudo)->first();
+         return view('profile',['user'=>$user]);
     }
 
     public function create()

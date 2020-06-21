@@ -10,14 +10,6 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
-                         
-
-
-                        
-
-
-
-
                         <div class="field">
                             <label class="label">Nom</label>
                             <div class="control">
