@@ -1,3 +1,5 @@
+
+
 @extends('layouts.app')
 
 @section('content')
@@ -8,7 +10,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                    <form method="POST"  enctype="multipart/form-data">
                         @csrf
                          
 
@@ -21,7 +23,7 @@
                         <div class="field">
                             <label class="label">Nom</label>
                             <div class="control">
-                              <input id="name" class="input" type="text" placeholder="Entrez votre nom" required name="name" value="{{ old('name') }}">
+                              <input id="name" class="input" type="text" placeholder="Entrez votre nom" required name="name" value="{{ Auth::user()->name }}">
                             </div>
                             
                         </div>
@@ -29,14 +31,14 @@
                         <div class="field">
                             <label class="label">Prenom</label>
                             <div class="control">
-                              <input id="prenom" class="input" type="text" placeholder="Entrez votre prenom" required name="prenom" value="{{ old('prenom') }}">
+                              <input id="prenom" class="input" type="text" placeholder="Entrez votre prenom" required name="prenom" value="{{ Auth::user()->prenom }}">
                             </div>
                         </div>
                         
                         <div class="field">
                             <label class="label">Age</label>
                             <div class="control">
-                              <input id="age" class="input @error('age') is-invalid @enderror" type="Integer" placeholder="Entrez votre age" required name="age" value="{{ old('age') }}">
+                              <input id="age" class="input @error('age') is-invalid @enderror" type="Integer" placeholder="Entrez votre age" required name="age" value="{{ Auth::user()->age }}">
                               @error('age')
                               <span class="invalid-feedback" role="alert">
                                   <strong>{{ $message }}</strong>
@@ -48,7 +50,7 @@
                         <div class="field">
                             <label class="label">Taille</label>
                             <div class="control">
-                              <input id="taille" class="input @error('taille') is-invalid @enderror" type="Integer" placeholder="Entrez votre taille en cm" required name="taille" value="{{ old('taille') }}">
+                              <input id="taille" class="input @error('taille') is-invalid @enderror" type="Integer" placeholder="Entrez votre taille en cm" required name="taille" value="{{ Auth::user()->taille }}">
                               @error('taille')
                               <span class="invalid-feedback" role="alert">
                                   <strong>{{ $message }}</strong>
@@ -60,7 +62,7 @@
                         <div class="field">
                             <label class="label">Email</label>
                             <div class="control has-icons-left has-icons-right">
-                              <input id="email" class="input" type="email" placeholder="Entrez votre E-mail" name="email" required value="{{ old('email') }}">
+                              <input id="email" class="input" type="email" placeholder="Entrez votre E-mail" name="email" required value="{{ Auth::user()->email }}">
                               <span class="icon is-small is-left">
                                 <i class="fas fa-envelope"></i>
                               </span>
@@ -71,25 +73,7 @@
                             
                         </div>
 
-                        <div class="field">
-                            <label class="label">Mot de passe</label>
-                            <div class="control">
-                              <input id="password"  name="password" class="input  @error('password') is-invalid @enderror" type="password" placeholder="Entrez votre mot de passe" required>
-                              @error('password')
-                              <span class="invalid-feedback" role="alert">
-                                  <strong>{{ $message }}</strong>
-                              </span>
-                              @enderror
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label">Confirmez votre mot de passe</label>
-                            <div class="control">
-                              <input id="password-confirm" name="password_confirmation" class="input" type="password" placeholder="Confirmez votre mot de passe" required >
-                            </div>
-                        </div>
-
+                        
                          <div class="field">
                              <label class="label" > Choisissez une photo de profil </label>
                              <input multiple enctype="multipart/form-data" type="file" class="form" name="PP" id="PP" required>
@@ -100,7 +84,7 @@
                         <div class="field">
                             <label class="label">Pseudonyme</label>
                             <div class="control has-icons-left has-icons-right">
-                              <input id="pseudo" name="pseudo" class="input @error('pseudo') is-invalid @enderror"  type="text" placeholder="Entrez votre pseudonyme"  required value="{{ old('pseudo') }}">
+                              <input id="pseudo" name="pseudo" class="input @error('pseudo') is-invalid @enderror"  type="text" placeholder="Entrez votre pseudonyme"  required value="{{ Auth::user()->pseudo }}">
                               @error('pseudo')
                               <span class="invalid-feedback" role="alert">
                                   <strong>{{ $message }}</strong>
@@ -150,7 +134,7 @@
                           <div class="field">
                             <label class="label">Bio</label>
                             <div class="control">
-                              <textarea id="bio"  class="textarea" placeholder="Entrez votre bio" required name="bio">{{ old('bio') }}</textarea>
+                              <textarea id="bio"  class="textarea" placeholder="Entrez votre bio" required name="bio">{{ Auth::user()->bio }}</textarea>
                             </div>
                           </div>
                           
@@ -190,3 +174,25 @@
     </div>
 </div>
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

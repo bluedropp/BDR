@@ -48,18 +48,30 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
+
     {
+        
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:50'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:4', 'confirmed'],
-            'age' => ['required','Integer'],
-            'height'=> ['required','Integer'],
-            'bio ' => ['required','mediumText'],
-            'smoking'=> ['required','boolean'],
+            'age' => ['required','Integer','min:18','max:130'],
+            'taille'=> ['required','Integer','max:260','min:50'],
+            'bio' => ['required','string','max:1500'],
+            'pseudo' => ['required','string','max:50','unique:users'],
+            'fumeur' => ['required', 'string'],
+            'hobby' => ['required','string'],
+            'PP' => ['required','image'],
+            'prenom'=>['required','string','max:50'],
         ]);
-    }
 
+
+        $data['PP']= request('PP')->store('PP');
+
+
+
+    }
+    
     /**
      * Create a new user instance after a valid registration.
      *
@@ -73,7 +85,16 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'age' => $data['age'],
-            'height'=> $data['age'],
+            'taille'=> $data['taille'],
+            'bio'=>$data['bio'],
+            'pseudo'=>$data['pseudo'],
+            'fumeur'=>$data['fumeur'],
+            'genre'=> $data['genre'],
+            'hobby'=> $data['hobby'],
+            'PP'=>$data['PP'],
+            'prenom'=>$data['prenom'],
         ]);
+        
+        
     }
 }
