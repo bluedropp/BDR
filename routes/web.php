@@ -23,6 +23,14 @@ Route::get('/register', function () {
 
 Auth::routes();
 
+Route::get('/accueil', function() {
+  return view('accueil');
+});
+
+Route::get('/search', function() {
+  return view('search');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/premium', function() {
     return view('premium');
