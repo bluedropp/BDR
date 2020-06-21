@@ -19,10 +19,10 @@ Route::get('/', function () {
 });
 
 
-
-Route::get('/profil/{profil}', 'ProfilController@show');
+Route::get('/home/profil/{profil}', 'ProfilController@show');
 
 Route::post('/home', 'ProfilController@store');
+Route::get('/home', 'ProfilController@index');
 
 Route::get('/register', 'ProfilController@create');
 
@@ -37,7 +37,6 @@ Route::get('/search', function() {
   return view('search');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/premium', function() {
     return view('premium');

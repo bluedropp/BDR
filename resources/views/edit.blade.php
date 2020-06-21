@@ -13,13 +13,6 @@
                     <form method="POST"  enctype="multipart/form-data">
                         @csrf
                          
-
-
-                        
-
-
-
-
                         <div class="field">
                             <label class="label">Nom</label>
                             <div class="control">
