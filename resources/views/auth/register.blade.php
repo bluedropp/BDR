@@ -92,7 +92,7 @@
 
                          <div class="field">
                              <label class="label" > Choisissez une photo de profil </label>
-                             <input multiple enctype="multipart/form-data" type="file" class="form" name="PP" id="PP" required>
+                             <input type="file" class="form" name="PP" id="PP" required>
                          </div>
                         
 

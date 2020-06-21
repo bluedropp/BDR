@@ -50,6 +50,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
 
     {
+        $data['PP']= request('PP')->store('PP');
         
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:50'],
@@ -61,14 +62,14 @@ class RegisterController extends Controller
             'pseudo' => ['required','string','max:50','unique:users'],
             'fumeur' => ['required', 'string'],
             'hobby' => ['required','string'],
-            'PP' => ['required','image'],
+            'PP' => ['required'],
             'prenom'=>['required','string','max:50'],
         ]);
 
+        
+        
 
-        $data['PP']= request('PP')->store('PP');
-
-
+        
 
     }
     
