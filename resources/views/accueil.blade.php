@@ -6,7 +6,7 @@
 
 <section class="section">
   <div class="container">
-    Blah blah blah
+    Discovery ici
   </div>
 </section>
 

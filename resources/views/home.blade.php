@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<<<<<<< HEAD
 
 
 
@@ -26,5 +27,17 @@
             </div>
         </div>
     </div>
+=======
+		@foreach ($users as $user)
+		<div id="content">
+			<div class="title">
+				
+				<h2><a href='/profil/{{$user->pseudo}}' style="text-decoration: none"> {{$user->pseudo}}</a></h2>
+				<span class="byline">{{$user->age}}</span> </div>
+			<p>{{$user->hobby}}</p>
+				@endforeach
+		</div>
+	</div>
+>>>>>>> 06e5b4dfd39645d6b4664b3c0afe8a44e51e3b58
 </div>
 @endsection

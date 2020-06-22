@@ -81,8 +81,8 @@
     <body class="has-navbar-fixed-top">
       <nav class="navbar is-fixed-top" role="navigation" aria-label="Main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
-            <img src="{{ URL:asset('..\LogoBDR.png')}}" width="112" height="28">
+          <a class="navbar-item">
+            <img src='\images\LogoBdr.png'>
           </a>
         </div>
 

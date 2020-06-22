@@ -15,6 +15,7 @@
                 <div class="card-body">
                     <form method="POST"  enctype="multipart/form-data">
                         @csrf
+<<<<<<< HEAD
 
 
 
@@ -23,6 +24,9 @@
 
 
 
+=======
+                         
+>>>>>>> 06e5b4dfd39645d6b4664b3c0afe8a44e51e3b58
                         <div class="field">
                             <label class="label">Nom</label>
                             <div class="control">
@@ -77,6 +81,26 @@
                         </div>
 
 
+<<<<<<< HEAD
+=======
+                        <img src="{{Auth::user()->PP}}" alt="" >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+>>>>>>> 06e5b4dfd39645d6b4664b3c0afe8a44e51e3b58
                          <div class="field">
                              <label class="label" > Choisissez une photo de profil </label>
                              <input multiple enctype="multipart/form-data" type="file" class="form" name="PP" id="PP" required>
@@ -106,9 +130,15 @@
                             <div class="control">
                               <div class="select">
                                 <select name="genre" >
-                                  <option name="genre" value="homme">Homme</option>
-                                  <option name="genre" value="femme">Femme</option>
-                                  <option name="genre" value="autre">Autre</option>
+                                  <option  value="homme" @if (Auth::user()->genre == "homme")
+                                      selected
+                                  @endif >Homme</option>
+                                  <option @if (Auth::user()->genre == "femme")
+                                    selected
+                                @endif value="femme" >Femme</option>
+                                  <option @if (Auth::user()->genre == "autre")
+                                    selected
+                                @endif value="autre" >Autre</option>
                                 </select>
                               </div>
                             </div>
@@ -119,6 +149,7 @@
                             <div class="control">
                               <div class="select">
                                 <select name="hobby">
+<<<<<<< HEAD
                                   <option  value="sciences">bureau des sciences</option>
                                   <option  value="litterature">burea de la litterature</option>
                                   <option  value="jeu video">bureau des jeux videos</option>
@@ -129,6 +160,36 @@
                                   <option  value="astronomie">bureau de l'astronomie</option>
                                   <option  value="jardinage">bureau du jardinage</option>
 
+=======
+                                  <option @if (Auth::user()->hobby == "sciences")
+                                    selected
+                                @endif value="sciences">bureau des sciences</option>
+                                  <option @if (Auth::user()->hobby == "litterature")
+                                    selected
+                                @endif value="litterature">burea de la litterature</option>
+                                  <option @if (Auth::user()->hobby == "jeu video")
+                                    selected
+                                @endif value="jeu video">bureau des jeux videos</option>
+                                  <option @if (Auth::user()->hobby == "histoire")
+                                    selected
+                                @endif value="histoire">bureau de l'histoire</option>
+                                  <option @if (Auth::user()->hobby == "sport")
+                                    selected
+                                @endif value="sport">bureau des sports</option>
+                                  <option @if (Auth::user()->hobby == "cuisine")
+                                    selected
+                                @endif value="cuisine">bureau de la cuisine</option>
+                                  <option @if (Auth::user()->hobby == "art")
+                                    selected
+                                @endif value="art">bureau de l'art</option>
+                                  <option @if (Auth::user()->hobby == "astronomie")
+                                    selected
+                                @endif value="astronomie">bureau de l'astronomie</option>
+                                  <option @if (Auth::user()->hobby == "jardinage")
+                                    selected
+                                @endif value="jardinage">bureau du jardinage</option>
+                                  
+>>>>>>> 06e5b4dfd39645d6b4664b3c0afe8a44e51e3b58
                                 </select>
                               </div>
                             </div>
@@ -148,11 +209,15 @@
                             <label class="label">Etes vous un fumeur ?</label>
 
                               <label class="radio">
-                                <input  value="1" type="radio" name="fumeur">
+                                <input  value="1" type="radio" name="fumeur" @if (Auth::user()->fumeur == "1")
+                                checked
+                            @endif>
                                 Oui
                               </label>
                               <label class="radio">
-                                <input  value="0" type="radio" name="fumeur">
+                                <input  value="0" type="radio" name="fumeur" @if (Auth::user()->fumeur == "0")
+                                checked
+                            @endif>
                                 Non
                               </label>
                             </div>
