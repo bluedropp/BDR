@@ -15,18 +15,7 @@
                 <div class="card-body">
                     <form method="POST"  enctype="multipart/form-data">
                         @csrf
-<<<<<<< HEAD
 
-
-
-
-
-
-
-
-=======
-                         
->>>>>>> 06e5b4dfd39645d6b4664b3c0afe8a44e51e3b58
                         <div class="field">
                             <label class="label">Nom</label>
                             <div class="control">
@@ -81,8 +70,6 @@
                         </div>
 
 
-<<<<<<< HEAD
-=======
                         <img src="{{Auth::user()->PP}}" alt="" >
 
 
@@ -99,8 +86,7 @@
 
 
 
-                        
->>>>>>> 06e5b4dfd39645d6b4664b3c0afe8a44e51e3b58
+
                          <div class="field">
                              <label class="label" > Choisissez une photo de profil </label>
                              <input multiple enctype="multipart/form-data" type="file" class="form" name="PP" id="PP" required>
@@ -149,18 +135,6 @@
                             <div class="control">
                               <div class="select">
                                 <select name="hobby">
-<<<<<<< HEAD
-                                  <option  value="sciences">bureau des sciences</option>
-                                  <option  value="litterature">burea de la litterature</option>
-                                  <option  value="jeu video">bureau des jeux videos</option>
-                                  <option  value="histoire">bureau de l'histoire</option>
-                                  <option  value="sport">bureau des sports</option>
-                                  <option  value="cuisine">bureau de la cuisine</option>
-                                  <option  value="art">bureau de l'art</option>
-                                  <option  value="astronomie">bureau de l'astronomie</option>
-                                  <option  value="jardinage">bureau du jardinage</option>
-
-=======
                                   <option @if (Auth::user()->hobby == "sciences")
                                     selected
                                 @endif value="sciences">bureau des sciences</option>
@@ -188,8 +162,7 @@
                                   <option @if (Auth::user()->hobby == "jardinage")
                                     selected
                                 @endif value="jardinage">bureau du jardinage</option>
-                                  
->>>>>>> 06e5b4dfd39645d6b4664b3c0afe8a44e51e3b58
+
                                 </select>
                               </div>
                             </div>
