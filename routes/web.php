@@ -18,8 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/profil','ProfilController@profil')->name('profil');
 
-Route::get('/home/profil/{profil}', 'ProfilController@show');
+Route::get('/edit','ProfilController@edit');
+Route::get('/profil/{profil}', 'ProfilController@show');
 
 Route::post('/home', 'ProfilController@store');
 Route::get('/home', 'ProfilController@index');
@@ -44,9 +46,7 @@ Route::get('/premium', function() {
 Route::get('/premium/payement','PremiumController@create');
 
 
-Route::get('/profil','ProfilController@profil')->name('profil');
 
-Route::get('/edit','ProfilController@edit');
 
 
 

@@ -80,14 +80,6 @@
     </head>
     <body class="has-navbar-fixed-top">
       @yield ('content')
-      <footer class="footer">
-        <div class="content has-text-centered">
-          <p>
-            <strong>BDR</strong> by Loick DUMOULIN GREGOIRE, Mostafa KASSEM and Jean-Baptiste SCHNERB. The source code is licenced
-            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-          </p>
-        </div>
-      </footer>
+      
     </body>
     </html>
