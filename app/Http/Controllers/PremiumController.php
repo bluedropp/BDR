@@ -7,6 +7,12 @@ use App\Premium;
 
 class PremiumController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function create() { //shows a view to create a new ressource (article)
 
         $page = request('prix');

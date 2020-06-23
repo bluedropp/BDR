@@ -51,9 +51,9 @@ class RegisterController extends Controller
 
     {
         request('PP')->store('PP');
+        
+        $data['PP']= 'test';
         dd(request('PP'));
-        
-        
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:50'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
