@@ -50,9 +50,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
 
     {
-        request('PP')->store('PP');
-        dd(request('PP'));
         
+        
+        $attribute['PP']= request('PP')->store('PP');
         
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:50'],
