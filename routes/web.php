@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/home/profil/{profil}', 'ProfilController@show');
+Route::get('/profil/{profil}', 'ProfilController@show');
 
 Route::post('/home', 'ProfilController@store');
 Route::get('/home', 'ProfilController@index');
@@ -48,5 +48,5 @@ Route::get('/profil','ProfilController@profil')->name('profil');
 
 Route::get('/edit','ProfilController@edit');
 
-
+  
 
