@@ -12,10 +12,10 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-        
 
 
-        
+
+
 
         <!-- Styles -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
@@ -79,15 +79,49 @@
 
     </head>
     <body class="has-navbar-fixed-top">
-      @yield ('content')
-      <footer class="footer">
-        <div class="content has-text-centered">
-          <p>
-            <strong>BDR</strong> by Loick DUMOULIN GREGOIRE, Mostafa KASSEM and Jean-Baptiste SCHNERB. The source code is licenced
-            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-          </p>
+      <nav class="navbar is-fixed-top" role="navigation" aria-label="Main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img src='\images\LogoBdr.png'>
+          </a>
         </div>
-      </footer>
+
+        <!-- Nécessite des liens pour les <a> -->
+        <div class="navbar-start">
+          <a class="navbar-item" href="discovery">
+            Discovery
+          </a>
+          <div class="navbar-item">
+            <a class="navbar-item" href="search">
+              Search
+            </a>
+
+          </div>
+        </div>
+        <div class="navbar-end">
+          <a class="navbar-item">
+            <a href="profil" class="button is-primary">
+              <span class="icon">
+                <i class="fas fa-user"></i>
+              </span>
+              <span>MyProfile</span>
+            </a>
+          </a>
+
+          <a class="navbar-item">
+            <a href="premium" class="button is-link">
+              <span class="icon">
+                <i class="fas fa-star"></i>
+              </span>
+              <span>Premium</span>
+            </a>
+          </a>
+
+        </div>
+
+
+      </nav>
+      @yield ('content')
+      
     </body>
     </html>

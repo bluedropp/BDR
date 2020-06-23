@@ -1,49 +1,7 @@
 
-@extends ('layout')
+@extends('layouts.app')
 @section ('content')
 
-<nav class="navbar is-fixed-top" role="navigation" aria-label="Main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-    </a>
-  </div>
-
-  <!-- Nécessite des liens pour les <a> -->
-  <div class="navbar-start">
-    <a class="navbar-item" href="discovery">
-      Discovery
-    </a>
-    <div class="navbar-item">
-      <a class="navbar-item" href="search">
-        Search
-      </a>
-
-    </div>
-  </div>
-  <div class="navbar-end">
-    <a class="navbar-item">
-      <a class="button is-primary">
-        <span class="icon">
-          <i class="fas fa-user"></i>
-        </span>
-        <span>MyProfile</span>
-      </a>
-    </a>
-
-    <a class="navbar-item">
-      <a class="button is-link">
-        <span class="icon">
-          <i class="fas fa-star"></i>
-        </span>
-        <span>Premium</span>
-      </a>
-    </a>
-
-  </div>
-
-
-</nav>
 
 <div class="title is-1 has-text-centered">
   Recherche par critère
@@ -56,8 +14,7 @@
 
         <label class="label">Pseudonyme</label>
         <input class="input" type="text" name="user" placeholder="Pseudonyme" style="width: 50%;">
-        <label class="label">Ville ou Région</label>
-        <input class="input" type="text" name="ville" placeholder="Ville ou Région" style="width: 50%;">
+
     </div>
     <div class="column">
       <div class="container">
@@ -65,10 +22,28 @@
         <div class="columns">
 
           <div class="column">
-            <input class="input"type="text" name="agemin" placeholder="Âge minimum">
+            <div class="control">
+              <label class="label">Âge minimum</label>
+              <div class="select">
+                <select>
+                  <option>20+</option>
+                  <option>30+</option>
+                  <option>40+</option>
+                </select>
+              </div>
+            </div>
           </div>
           <div class="column">
-            <input class="input" type="text" name="agemax" placeholder="Âge maximum">
+            <div class="control">
+              <label class="label">Âge maximum</label>
+              <div class="select">
+                <select>
+                  <option>30-</option>
+                  <option>40-</option>
+                  <option>50-</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -98,7 +73,7 @@
   </div>
 
   <div class="field">
-
+    <input style="left: 43%;" type="submit" class="button is-primary" value="Search">
   </div>
 
 </form>

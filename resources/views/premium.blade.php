@@ -1,6 +1,9 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
+
+
+
 <section class="hero is-warning">
     <div class="hero-body">
       <div class="container">
@@ -20,7 +23,7 @@
         <i class="far fa-comment-dots"></i>
         </span>
         Messages illimité.
-        
+
       </div>
       <div class="tile is-child box">
         <span class="icon has-text-danger">
@@ -55,5 +58,5 @@
       </div>
     </div>
   </div>
-  
+
 @endsection

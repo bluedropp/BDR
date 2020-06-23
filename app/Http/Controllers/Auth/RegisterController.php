@@ -51,6 +51,9 @@ class RegisterController extends Controller
 
     {
         
+        
+        $attribute['PP']= request('PP')->store('PP');
+        
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:50'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -61,14 +64,14 @@ class RegisterController extends Controller
             'pseudo' => ['required','string','max:50','unique:users'],
             'fumeur' => ['required', 'string'],
             'hobby' => ['required','string'],
-            'PP' => ['required','image'],
+            'PP' => ['required'],
             'prenom'=>['required','string','max:50'],
         ]);
 
+        
+        
 
-        $data['PP']= request('PP')->store('PP');
-
-
+        
 
     }
     
