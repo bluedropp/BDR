@@ -50,23 +50,11 @@
 
     </div>
     <div class="column">
-      <div class="container">
-        <label class="label">Options supplémentaires</label>
-      <label class="checkbox">
-        <input type="checkbox">
-        Bio vide
-      </label>
-    </div>
     <div class="container">
+      <label class="label">Options supplémentaires</label>
       <label class="checkbox">
         <input type="checkbox">
-        Fûmeur/fûmeuse
-      </label>
-      </div>
-      <div class="container">
-      <label class="checkbox">
-        <input type="checkbox">
-        Avec photo de profil
+        Non-Fumeur/fumeuse
       </label>
       </div>
     </div>

@@ -171,7 +171,7 @@
               </div>
               <div class="navbar-end">
                 <a class="navbar-item">
-                  <a href="profil" class="button is-primary">
+                  <a href="edit" class="button is-primary">
                     <span class="icon">
                       <i class="fas fa-user"></i>
                     </span>
