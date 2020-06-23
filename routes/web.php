@@ -44,9 +44,3 @@ Route::get('/premium', function() {
     return view('premium');
 });
 Route::get('/premium/payement','PremiumController@create');
-
-
-
-
-
-
