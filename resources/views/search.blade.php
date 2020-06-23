@@ -1,5 +1,5 @@
 
-@extends ('layout')
+@extends('layouts.app')
 @section ('content')
 
 
@@ -14,8 +14,7 @@
 
         <label class="label">Pseudonyme</label>
         <input class="input" type="text" name="user" placeholder="Pseudonyme" style="width: 50%;">
-        <label class="label">Ville ou Région</label>
-        <input class="input" type="text" name="ville" placeholder="Ville ou Région" style="width: 50%;">
+
     </div>
     <div class="column">
       <div class="container">
@@ -23,10 +22,28 @@
         <div class="columns">
 
           <div class="column">
-            <input class="input"type="text" name="agemin" placeholder="Âge minimum">
+            <div class="control">
+              <label class="label">Âge minimum</label>
+              <div class="select">
+                <select>
+                  <option>20+</option>
+                  <option>30+</option>
+                  <option>40+</option>
+                </select>
+              </div>
+            </div>
           </div>
           <div class="column">
-            <input class="input" type="text" name="agemax" placeholder="Âge maximum">
+            <div class="control">
+              <label class="label">Âge maximum</label>
+              <div class="select">
+                <select>
+                  <option>30-</option>
+                  <option>40-</option>
+                  <option>50-</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -56,7 +73,7 @@
   </div>
 
   <div class="field">
-
+    <input style="left: 43%;" type="submit" class="button is-primary" value="Search">
   </div>
 
 </form>
