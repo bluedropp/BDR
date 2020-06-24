@@ -130,7 +130,6 @@
                 </a>
               </div>
 
-              <!-- Nécessite des liens pour les <a> -->
               <div class="navbar-start">
                 <a class="navbar-item" href="discovery">
                   Discovery
