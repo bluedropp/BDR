@@ -10,12 +10,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Profil') }}</div>
 
                 <div class="card-body">
-                    <form method="POST"  enctype="multipart/form-data">
+                    <form method="POST" action="/profil/{{ Auth::user()->pseudo }}" enctype="multipart/form-data">
+                      
                         @csrf
-
+                        @method('PUT')
                         <div class="field">
                             <label class="label">Nom</label>
                             <div class="control">
@@ -89,7 +90,7 @@
 
                          <div class="field">
                              <label class="label" > Choisissez une photo de profil </label>
-                             <input multiple enctype="multipart/form-data" type="file" class="form" name="PP" id="PP" required>
+                             <img src="/{{Auth::user()->PP}}" height="100px" width="100px" class="mx-1"><input multiple enctype="multipart/form-data" type="file" class="form" name="PP" id="PP" required>
                          </div>
 
 
@@ -199,7 +200,7 @@
                           <div class="field is-grouped">
                             <div class="control">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{ __('Confirmer') }}
                                 </button>
                             </div>
                           </div>

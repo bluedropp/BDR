@@ -20,8 +20,10 @@ Route::get('/', function () {
 
 Route::get('/profil','ProfilController@profil')->name('profil');
 
-Route::get('/profil/edit','ProfilController@edit');
+
 Route::get('/profil/{profil}', 'ProfilController@show');
+Route::get('/profil/{profil}/edit','ProfilController@edit');
+Route::put('/profil/{profil}','ProfilController@update');
 
 Route::post('/home', 'ProfilController@store');
 Route::get('/home', 'ProfilController@index');
