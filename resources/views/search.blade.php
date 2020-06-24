@@ -24,7 +24,7 @@
     
     
   <br>
-  
+
   <div class="field">
     <input style="left: 43%;" type="submit" class="button is-primary" value="Search">
   </div>
