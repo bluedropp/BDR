@@ -35,17 +35,49 @@ class ProfilController extends Controller
 
     }
 
-    public function edit()
+    public function edit($pseudo)
     {
-        return view('edit');
+        $user = DB::table('users')->where('pseudo',$pseudo)->first();
+        return view('edit',['user'=>$user]);
     }
 
-    public function update()
+    public function update($pseudo)
     {
+        $user = Profil::where('pseudo',$pseudo)->first();
+        if (request('PP') != null ){
+
+            $ok=request('PP')->store('PP');
+            $user->name = request('name');
+            $user->age = request('age');
+            $user->taille = request('taille');
+            $user->bio = request('bio');
+            $user->fumeur = request('fumeur');
+            $user->genre = request('genre');
+            $user->PP= $ok;
+        }
+        else {
+            
+            $user->name = request('name');
+            $user->age = request('age');
+            $user->taille = request('taille');
+            $user->bio = request('bio');
+            $user->fumeur = request('fumeur');
+            $user->genre = request('genre');
         
+        }
+
+
+
+
+
+
+
+        $user->save();
+
+        return redirect('profil/'.$user->pseudo);
     }
 
-
+    
 
 
 }

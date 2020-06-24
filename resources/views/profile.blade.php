@@ -3,15 +3,19 @@
 
 <div id="wrapper">
     <div class= "container has-texted-centered">
-            <h4 class="title is-1">{{$user->pseudo}}</h4>
-            <span class="subtitle is-3"> {{$user->age}} </span>
-				<div>
-				<p class="label">Age : {{$user->genre}}</p>
-            <p class="label">Taille (en cm) : {{$user->taille}}</p>
-            <p class='label'>Hobby : {{$user->hobby}} </p>
+            <h4 class="title is-1 has-text-centered">{{$user->pseudo}}</h4>
+            <figure class="has-text-centered">
+            <img src="/{{$user->PP}}" height="600px" width="600px" >
+            </figure>
+            <div class="box has-text-centered "><p>{{$user->bio}}</p></div>
+           
+				
+		    <p class="label has-text-centered">Age : {{$user->age}}</p>
+            <p class="label has-text-centered">Taille (en cm) : {{$user->taille}}</p>
+            <p class="label has-text-centered">Bureau : {{$user->hobby}} </p>
             
         </div>
-<p>{{$user->bio}}</p>		
+       		
     </div>
 </div>
 

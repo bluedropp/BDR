@@ -167,7 +167,7 @@
                 @endguest
 
                 <a class="navbar-item">
-                  <a href="edit" class="button is-primary">
+                  <a href="profil/edit" class="button is-primary">
                     <span class="icon">
                       <i class="fas fa-user"></i>
                     </span>
