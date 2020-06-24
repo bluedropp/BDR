@@ -25,17 +25,13 @@ Route::get('/profil/{profil}', 'ProfilController@show');
 Route::get('/profil/{profil}/edit','ProfilController@edit');
 Route::put('/profil/{profil}','ProfilController@update');
 
-Route::post('/home', 'ProfilController@store');
-Route::get('/home', 'ProfilController@index');
+Route::post('/accueil', 'ProfilController@store');
+Route::get('/accueil', 'ProfilController@index');
 
 Route::get('/register', 'ProfilController@create');
 
 
 Auth::routes();
-
-Route::get('/accueil', function() {
-  return view('accueil');
-});
 
 Route::get('/search', function() {
   return view('search');
