@@ -43,16 +43,34 @@ class ProfilController extends Controller
 
     public function update($pseudo)
     {
-        $user = DB::table('users')->where('pseudo',$pseudo)->first();
+        $user = Profil::where('pseudo',$pseudo)->first();
+        if (request('PP') != null ){
 
-        $user->name = request('name');
-        $user->age = request('age');
-        $user->taille = request('taille');
-        $user->bio = request('bio');
-        $user->fumeur = request('fumeur');
-        $user->genre = request('genre');
+            $ok=request('PP')->store('PP');
+            $user->name = request('name');
+            $user->age = request('age');
+            $user->taille = request('taille');
+            $user->bio = request('bio');
+            $user->fumeur = request('fumeur');
+            $user->genre = request('genre');
+            $user->PP= $ok;
+        }
+        else {
+            
+            $user->name = request('name');
+            $user->age = request('age');
+            $user->taille = request('taille');
+            $user->bio = request('bio');
+            $user->fumeur = request('fumeur');
+            $user->genre = request('genre');
+        
+        }
 
-       
+
+
+
+
+
 
         $user->save();
 
