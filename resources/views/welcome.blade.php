@@ -6,15 +6,17 @@
         <div class="flex-center position-ref full-height">
 
             <div class="content">
+                <img src='\images\LogoBdr.png'>
                 <div class="title is-1">
-                    <a href="register">Le Bureau des Rencontres</a>
+                    Le Bureau des Rencontres
                 </div>
-
                 <div class="links subtitle is-3">
-                    <a href="login">Log In</a>
+                    <a class="button is-dark" href={{ url("/register") }}>S'inscrire</a>
                 </div>
             </div>
         </div>
+
+
     </body>
 </html>
 

@@ -15,7 +15,7 @@ class ProfilController extends Controller
 
     public function index() { //renders a list of a ressource //affiche le home
         $users = DB::table('users')->get();
-        return view('home', ['users' => $users]);
+        return view('accueil', ['users' => $users]);
     }   
 
     public function show($pseudo)//affiche le profile de l'utilisateur actuel
@@ -27,7 +27,6 @@ class ProfilController extends Controller
     public function create()
     {
         return view('register');
-
     }
 
     public function store()
@@ -73,9 +72,8 @@ class ProfilController extends Controller
 
 
         $user->save();
-
+        
         return redirect('profil/'.$user->pseudo);
-    }
 
     public function search(){
 
