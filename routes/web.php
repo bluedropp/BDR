@@ -24,7 +24,7 @@ Route::get('/profil','ProfilController@profil')->name('profil');
 Route::get('/profil/{profil}', 'ProfilController@show');
 Route::get('/profil/{profil}/edit','ProfilController@edit');
 Route::put('/profil/{profil}','ProfilController@update');
-
+Route::post('/search','ProfilController@search');
 Route::post('/accueil', 'ProfilController@store');
 Route::get('/accueil', 'ProfilController@index');
 
