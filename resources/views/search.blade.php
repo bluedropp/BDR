@@ -9,69 +9,22 @@
 
 <form method="post">
 
+  @csrf
+
   <div class="columns has-text-centered">
-    <div class="column is-third">
+    <div class="column">
 
         <label class="label">Pseudonyme</label>
-        <input class="input" type="text" name="user" placeholder="Pseudonyme" style="width: 50%;">
+        <input class="input" type="text" name="pseudo" placeholder="Pseudonyme" style="width: 50%;">
 
     </div>
     <div class="column">
-      <div class="container">
-        <label class="label">Tranche d'âge</label>
-        <div class="columns">
-
-          <div class="column">
-            <div class="control">
-              <label class="label">Âge minimum</label>
-              <div class="select">
-                <select>
-                  <option>20+</option>
-                  <option>30+</option>
-                  <option>40+</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="column">
-            <div class="control">
-              <label class="label">Âge maximum</label>
-              <div class="select">
-                <select>
-                  <option>30-</option>
-                  <option>40-</option>
-                  <option>50-</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <input class="slider is-fullwidth is-info" step="1" min="0" max="100" value="50" type="range">
     </div>
-    <div class="column">
-      <div class="container">
-        <label class="label">Options supplémentaires</label>
-      <label class="checkbox">
-        <input type="checkbox">
-        Bio vide
-      </label>
-    </div>
-    <div class="container">
-      <label class="checkbox">
-        <input type="checkbox">
-        Fûmeur/fûmeuse
-      </label>
-      </div>
-      <div class="container">
-      <label class="checkbox">
-        <input type="checkbox">
-        Avec photo de profil
-      </label>
-      </div>
-    </div>
-  </div>
-
+    
+    
+  <br>
+  
   <div class="field">
     <input style="left: 43%;" type="submit" class="button is-primary" value="Search">
   </div>
