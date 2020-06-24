@@ -8,12 +8,12 @@
 </div>
 
 <form method="post" action="result">
-
+  @csrf
   <div class="columns has-text-centered">
     <div class="column is-third">
 
         <label class="label">Pseudonyme</label>
-        <input class="input" type="text" name="user" placeholder="Pseudonyme" style="width: 50%;">
+        <input class="input" type="text" name="pseudonyme" placeholder="Pseudonyme" style="width: 50%;">
 
     </div>
     <div class="column">

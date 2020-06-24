@@ -14,8 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = DB::table('users')->get();
+      //  $users = DB::table('users')->where('pseudo', $_POST['pseudonyme']);
 
-        return view('result', ['users' => $users]);
+        //return view('result', ['users' => $users]);
     }
 }
