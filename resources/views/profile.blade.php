@@ -4,6 +4,8 @@
 <div id="wrapper">
     <div class= "container has-texted-centered">
             <h4 class="title is-1">{{$user->pseudo}}</h4>
+            <img src="/{{$user->PP}}" class="image is-square">
+
             <span class="subtitle is-3"> {{$user->age}} </span>
 				<div>
 				<p class="label">Age : {{$user->genre}}</p>
