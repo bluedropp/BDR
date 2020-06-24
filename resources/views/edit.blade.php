@@ -90,7 +90,7 @@
 
                          <div class="field">
                              <label class="label" > Choisissez une photo de profil </label>
-                             <img src="/{{Auth::user()->PP}}" height="100px" width="100px" class="mx-1"><input multiple enctype="multipart/form-data" type="file" class="form" name="PP" id="PP" required>
+                             <img src="/{{Auth::user()->PP}}" height="100px" width="100px" class="mx-1"><input multiple enctype="multipart/form-data" type="file" class="form" name="PP" id="PP">
                          </div>
 
 
