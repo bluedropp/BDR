@@ -7,7 +7,7 @@
   Recherche par critère
 </div>
 
-<form method="post">
+<form method="post" action="result">
 
   <div class="columns has-text-centered">
     <div class="column is-third">

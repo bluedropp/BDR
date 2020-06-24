@@ -28,6 +28,7 @@ Route::get('/home', 'ProfilController@index');
 
 Route::get('/register', 'ProfilController@create');
 
+Route::post('/result', 'UserController@index');
 
 Auth::routes();
 
