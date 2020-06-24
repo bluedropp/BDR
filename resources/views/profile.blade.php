@@ -4,11 +4,11 @@
 <div id="wrapper">
     <div class= "container has-texted-centered">
             <h4 class="title is-1">{{$user->pseudo}}</h4>
-            <img src="/{{$user->PP}}" class="image is-square">
-
+            <figure class="image is-square">
+            <img src="/{{$user->PP}}">
+            </figure>
             <span class="subtitle is-3"> {{$user->age}} </span>
-            <img src= "/{{$user->PP}}">
-				<div>
+			<div>
 				<p class="label">Age : {{$user->genre}}</p>
             <p class="label">Taille (en cm) : {{$user->taille}}</p>
             <p class='label'>Hobby : {{$user->hobby}} </p>

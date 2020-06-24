@@ -104,18 +104,7 @@
                                     @csrf
                                 <button class="button is-primary is-outlined"  onclick="{{route('profil')}}">Profil</button>
                                 </form>
-
-
-
                             </li>
-                        
-
-
-
-
-
-
-
                     </ul>
                 </div>
             </div>

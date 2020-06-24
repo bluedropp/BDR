@@ -82,7 +82,6 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $img = request('PP')->store('PP');
-        dump($img);
 
         return User::create([
             'name' => $data['name'],
