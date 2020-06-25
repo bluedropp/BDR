@@ -94,7 +94,7 @@
 
   <br><br>
   <div class="field">
-    <input style="left: 43%;" type="submit" class="button is-primary" value="Rechercher">
+    <input style="left: 50%;" type="submit" class="button is-primary" value="Rechercher">
   </div>
 
 </form>

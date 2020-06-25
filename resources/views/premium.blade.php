@@ -11,7 +11,7 @@
           Premium
         </h1>
         <h2 class="subtitle">
-            What you get with premium
+            Les Avantages
         </h2>
       </div>
     </div>

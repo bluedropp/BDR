@@ -81,6 +81,7 @@ class ProfilController extends Controller
         $qpseudo=request('qpseudo');
         
         $qage=request('qage');
+        $qgenre=request('qgenre');
         if (isset($qage)) {
             settype($qage,"int");
         }
@@ -91,9 +92,12 @@ class ProfilController extends Controller
         //dd($qfumeur);
         //dd(gettype($qfumeur));
         $users = DB::table('users')
-                ->when("true",function($query) use ($qpseudo) {
+                ->when(isset($qpseudo),function($query) use ($qpseudo) {
                     return $query->where('pseudo','like',$qpseudo.'%');                
                     })
+                ->when(isset($qgenre),function($query) use ($qgenre) {
+                return $query->where('genre','like',$qgenre);                
+                })
                 ->when(isset($qage),function($query) use ($qage) {
                     if ($qage != '51') {
                         return $query->where('age','<=',$qage);
@@ -108,7 +112,7 @@ class ProfilController extends Controller
                 return $query->where('fumeur',$qfumeur);                
                 })
                 ->get();
-        dd($users);           
+        return view("resultats",['users'=>$users]) ;          
     }
 
 
