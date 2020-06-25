@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use App\Profil;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -52,6 +52,8 @@ class ProfilController extends Controller
             $user->bio = request('bio');
             $user->fumeur = request('fumeur');
             $user->genre = request('genre');
+            $user->pseudo = request('pseudo');
+            $user->hobby = request('hobby');
             $user->PP= $ok;
         }
         else {
@@ -62,6 +64,8 @@ class ProfilController extends Controller
             $user->bio = request('bio');
             $user->fumeur = request('fumeur');
             $user->genre = request('genre');
+            $user->pseudo = request('pseudo');
+            $user->hobby = request('hobby');
         
         }
 
@@ -74,6 +78,7 @@ class ProfilController extends Controller
         $user->save();
         
         return redirect('profil/'.$user->pseudo);
+    }
 
     public function search(){
 
@@ -83,29 +88,33 @@ class ProfilController extends Controller
         $qhobby=request('qhobby');
         $qfumeur=request('qfumeur');
         
+       
+            $query = User::all()->where('hobby', $qhobby);
 
-        $query = DB::table('users');
-            if (isset($qpseudo))
-            $query->where('pseudo', $qpseudo."%");
+
+
+       // $query = DB::table('users');
+         //   if (isset($qpseudo))
+        //    $query->where('pseudo', $qpseudo);
 
         
-            if (isset($qage))
-                if ( $qage != "50+" )
-                    $query->where('age','<=',$qage);
-                else
-                    $query->where('age','>',1);
+         //   if (isset($qage))
+           //     if ( $qage != "50+" )
+            //        $query->where('age','<=',$qage);
+            //    else
+           //         $query->where('age','>',1);
                 
 
         
-            if (isset($qhobby))
-                $query->where('hobby'== $qhobby);
+          //  if (isset($qhobby))
+          //      $query->where('hobby',$qhobby);
             
 
         
-            if (isset($qfumeur))
-                $query->where('fumeur'== $qfumeur);
+         //   if (isset($qfumeur))
+         //       $query->where('fumeur',$qfumeur);
             
-            $query->get();
+       // $query->get();//
             
         dd($query);
 

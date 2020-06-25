@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePremiumTable extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreatePremiumTable extends Migration
      */
     public function up()
     {
-        Schema::create('premium', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id');
-            
-            $table->timestamp("date_facturation");
-            $table->timestamp("date_expiration");
-            $table->integer('durée_restante');
-            $table->double('prix');
+        Schema::create('roles', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreatePremiumTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('premium');
+        Schema::dropIfExists('roles');
     }
 }
