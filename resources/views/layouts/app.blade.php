@@ -141,7 +141,7 @@
                   Accueil
                 </a>
                 <div class="navbar-item">
-                  <a class="navbar-item" {{ url("/search") }}>
+                  <a class="navbar-item" href={{ url("/search") }}>
                     Search
                   </a>
 

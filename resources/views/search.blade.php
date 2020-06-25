@@ -21,15 +21,31 @@
     <div class="column">
       <div class="container">
         <div class="control">
+          <label class="label">Genre</label>
+          <div class="select">
+            <select name="qgenre">
+              <option value="">Selectionez</option>
+              <option value="homme">Homme</option>
+              <option value="femme">Femme</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="container">
+        <div class="control">
           <label class="label">Âge maximum</label>
           <div class="select">
             <select name="qage">
-              <option value="">-selectionez-</option>
+              <option value="">Selectionez</option>
               <option value="20">20</option>
               <option value="30">30</option>
               <option value="40">40</option>
               <option value="50">50</option>
-              <option value="50+">50+</option>
+              <option value="51">50+</option>
             </select>
           </div>
         </div>
@@ -43,16 +59,16 @@
        
           <div class="select">
             <select name="qhobby" id="aaa">
-              <option value="">-selectionez-</option>
-              <option  value="sciences">bureau des sciences</option>
-              <option  value="litterature">burea de la litterature</option>
-              <option  value="jeu video">bureau des jeux videos</option>
-              <option  value="histoire">bureau de l'histoire</option>
-              <option  value="sport">bureau des sports</option>
-              <option  value="cuisine">bureau de la cuisine</option>
-              <option  value="art">bureau de l'art</option>
-              <option  value="astronomie">bureau de l'astronomie</option>
-              <option  value="jardinage">bureau du jardinage</option>
+              <option value="">Selectionez</option>
+              <option  value="sciences">Bureau des sciences</option>
+              <option  value="litterature">Bureau de la litterature</option>
+              <option  value="jeu video">Bureau des jeux videos</option>
+              <option  value="histoire">Bureau de l'histoire</option>
+              <option  value="sport">Bureau des sports</option>
+              <option  value="cuisine">Bureau de la cuisine</option>
+              <option  value="art">Bureau de l'art</option>
+              <option  value="astronomie">Bureau de l'astronomie</option>
+              <option  value="jardinage">Bureau du jardinage</option>
               
             </select>
           </div>
@@ -66,23 +82,13 @@
       </label>
       <div class="select">
         <select name="qfumeur" id="bbb">
-          <option value="">-selectionez-</option>
-          <option value="1">oui</option>
-          <option value="0">non</option>
+          <option value="">Selectionez</option>
+          <option value="1">Oui</option>
+          <option value="0">Non</option>
         </select>
 
       </div>
-
-
-
-
-
     </div>
-
-
-
-
-
   </div>
 
 
@@ -92,28 +98,4 @@
   </div>
 
 </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @endsection

@@ -72,51 +72,43 @@ class ProfilController extends Controller
 
 
         $user->save();
-        
+      
         return redirect('profil/'.$user->pseudo);
-
+    }
     public function search(){
 
 
         $qpseudo=request('qpseudo');
+        
         $qage=request('qage');
+        if (isset($qage)) {
+            settype($qage,"int");
+        }
+        //dd($qage);
         $qhobby=request('qhobby');
+        //dd($qhobby);
         $qfumeur=request('qfumeur');
-        
-
-        $query = DB::table('users');
-            if (isset($qpseudo))
-            $query->where('pseudo', $qpseudo."%");
-
-        
-            if (isset($qage))
-                if ( $qage != "50+" )
-                    $query->where('age','<=',$qage);
-                else
-                    $query->where('age','>',1);
-                
-
-        
-            if (isset($qhobby))
-                $query->where('hobby'== $qhobby);
-            
-
-        
-            if (isset($qfumeur))
-                $query->where('fumeur'== $qfumeur);
-            
-            $query->get();
-            
-        dd($query);
-
-
-
-
-
-
-
-
-        return view();
+        //dd($qfumeur);
+        //dd(gettype($qfumeur));
+        $users = DB::table('users')
+                ->when("true",function($query) use ($qpseudo) {
+                    return $query->where('pseudo','like',$qpseudo.'%');                
+                    })
+                ->when(isset($qage),function($query) use ($qage) {
+                    if ($qage != '51') {
+                        return $query->where('age','<=',$qage);
+                    } else {
+                        return $query->where('age','>',$qage);
+                    }
+                })
+                ->when(isset($qhobby),function($query) use ($qhobby) {
+                    return $query->where('hobby',$qhobby);                
+                    })
+                ->when(isset($qfumeur),function($query) use ($qfumeur) {
+                return $query->where('fumeur',$qfumeur);                
+                })
+                ->get();
+        dd($users);           
     }
 
 
