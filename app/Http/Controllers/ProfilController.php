@@ -64,15 +64,7 @@ class ProfilController extends Controller
             $user->genre = request('genre');
         
         }
-
-
-
-
-
-
-
         $user->save();
-      
         return redirect('profil/'.$user->pseudo);
     }
     public function search(){
@@ -85,12 +77,8 @@ class ProfilController extends Controller
         if (isset($qage)) {
             settype($qage,"int");
         }
-        //dd($qage);
         $qhobby=request('qhobby');
-        //dd($qhobby);
         $qfumeur=request('qfumeur');
-        //dd($qfumeur);
-        //dd(gettype($qfumeur));
         $users = DB::table('users')
                 ->when(isset($qpseudo),function($query) use ($qpseudo) {
                     return $query->where('pseudo','like',$qpseudo.'%');                
@@ -112,8 +100,6 @@ class ProfilController extends Controller
                 return $query->where('fumeur',$qfumeur);                
                 })
                 ->get();
-        return view("resultats",['users'=>$users]) ;          
+        return view("resultats",['users'=>$users]);          
     }
-
-
 }

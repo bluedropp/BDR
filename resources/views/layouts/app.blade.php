@@ -165,7 +165,7 @@
                                          document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
-                        <a class="dropdown-item" href={{ url("/profil/".Auth::user()->pseudo."/visites") }}> Visites </a>
+                        <a class="dropdown-item" href={{ url("/profil") }}> Messagerie </a>
 
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
