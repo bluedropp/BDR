@@ -30,6 +30,12 @@ Route::get('/accueil', 'ProfilController@index');
 
 Route::get('/register', 'ProfilController@create');
 
+Route::post('/messagerie', 'UserController@create');
+Route::get('/messagerie', 'UserController@index');
+Route::get('/nouveau', function() {
+  return view('nouveau');
+});
+
 Auth::routes();
 
 Route::get('/search', function() {
