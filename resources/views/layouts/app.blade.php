@@ -165,7 +165,8 @@
                                          document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
-                        <a class="dropdown-item" href={{ url("/profil") }}> Messagerie </a>
+                        <a class="dropdown-item" href={{ url("/profil/".Auth::user()->pseudo."/edit") }}> Editer mon profil </a>
+                        <a class="dropdown-item" href={{ url("/messagerie") }}> Messagerie </a>
 
                         <a class="dropdown-item" href={{ route("admin.users.index") }}>
                           Admin

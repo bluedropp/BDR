@@ -15,6 +15,9 @@ class CreateMessagerietable extends Migration
     {
         Schema::create('messagerietable', function (Blueprint $table) {
             $table->id();
+            $table->mediumtext('contenu');
+            $table->string('destinateur');
+            $table->string('destinataire');
             $table->timestamps();
         });
     }
