@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    
 
 
 
@@ -104,18 +105,7 @@
                                     @csrf
                                 <button class="button is-primary is-outlined"  onclick="{{route('profil')}}">Profil</button>
                                 </form>
-
-
-
                             </li>
-
-
-
-
-
-
-
-
                     </ul>
                 </div>
             </div>
@@ -124,58 +114,68 @@
         <main class="py-4">
           <body>
             <nav class="navbar is-fixed-top" role="navigation" aria-label="Main navigation">
+              @guest
               <div class="navbar-brand">
                 <a href="/" class="navbar-item">
-                  <img src='\images\LogoBdr.png'>
+                    <img src='\images\LogoBdr.png'>
                 </a>
               </div>
-
+              <a class="navbar-item">
+                <a href="/login" class="button is-primary">
+                  <span class="icon">
+                    <i class="fas fa-user"></i>
+                  </span>
+                  <span>Login</span>
+                </a>
+              </a>
+            </nav>
+              @else
+              <div class="navbar-brand">
+                <a href="/accueil" class="navbar-item">
+                    <img src='\images\LogoBdr.png'>
+                </a>
+              </div>
+              <!-- Nécessite des liens pour les <a> -->
               <div class="navbar-start">
-                <a class="navbar-item" href="discovery">
-                  Discovery
+                <a class="navbar-item" href={{ url("/accueil") }}>
+                  Accueil
                 </a>
                 <div class="navbar-item">
-                  <a class="navbar-item" href="search">
+                  <a class="navbar-item" href={{ url("/search") }}>
                     Search
                   </a>
 
                 </div>
               </div>
               <div class="navbar-end">
-                @guest
-
-            @else
+                
+                
+           
                 <li class="nav-item dropdown">
+                  <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }} <span class="caret"></span>
+                        {{ Auth::user()->name }}
                     </a>
-
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href={{ url("/profil/".Auth::user()->pseudo) }}> Profil </a>
+                    
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
+                        <a class="dropdown-item" href={{ url("/profil/".Auth::user()->pseudo."/visites") }}> Visites </a>
 
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
-                    </div>
+                      </div>
+                  </div>
                 </li>
-                @endguest
-
                 <a class="navbar-item">
-                  <a href="profil/edit" class="button is-primary">
-                    <span class="icon">
-                      <i class="fas fa-user"></i>
-                    </span>
-                    <span>MyProfile</span>
-                  </a>
-                </a>
-
-                <a class="navbar-item">
-                  <a href="premium" class="button is-link">
+                  <a href={{url("/premium")}} class="button is-link">
                     <span class="icon">
                       <i class="fas fa-star"></i>
                     </span>
@@ -184,20 +184,30 @@
                 </a>
 
               </div>
+                @endguest
+
+
+               
 
 
             </nav>
             @yield('content')
             <footer class="footer">
                 <div class="content has-text-centered">
+                  @php
+                  echo "Nombre d'utilisateurs inscrits a ce jour : ".DB::table('users')->count();
+                  @endphp
+                  <br>
                   <p>
                     <strong>BDR</strong> by Loick DUMOULIN GREGOIRE, Mostafa KASSEM and Jean-Baptiste SCHNERB. The source code is licenced
                     <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
                     is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+
+                   
                   </p>
                 </div>
               </footer>
-
+              
             </body>
         </main>
     </div>

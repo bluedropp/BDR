@@ -24,23 +24,22 @@ Route::get('/profil','ProfilController@profil')->name('profil');
 Route::get('/profil/{profil}', 'ProfilController@show');
 Route::get('/profil/{profil}/edit','ProfilController@edit');
 Route::put('/profil/{profil}','ProfilController@update');
-
-Route::post('/home', 'ProfilController@store');
-Route::get('/home', 'ProfilController@index');
+Route::post('/search','ProfilController@search');
+Route::post('/accueil', 'ProfilController@store');
+Route::get('/accueil', 'ProfilController@index');
 
 Route::get('/register', 'ProfilController@create');
 
+<<<<<<< HEAD
 Route::post('/messagerie', 'UserController@create');
 Route::get('/messagerie', 'UserController@index');
 Route::get('/nouveau', function() {
   return view('nouveau');
 });
 
+=======
+>>>>>>> fed8fec349ee6adcfa334310bd3fcee39f21f94d
 Auth::routes();
-
-Route::get('/accueil', function() {
-  return view('accueil');
-});
 
 Route::get('/search', function() {
   return view('search');

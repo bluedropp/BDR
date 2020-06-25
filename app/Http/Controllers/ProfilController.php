@@ -15,7 +15,7 @@ class ProfilController extends Controller
 
     public function index() { //renders a list of a ressource //affiche le home
         $users = DB::table('users')->get();
-        return view('home', ['users' => $users]);
+        return view('accueil', ['users' => $users]);
     }   
 
     public function show($pseudo)//affiche le profile de l'utilisateur actuel
@@ -27,7 +27,6 @@ class ProfilController extends Controller
     public function create()
     {
         return view('register');
-
     }
 
     public function store()
@@ -73,11 +72,48 @@ class ProfilController extends Controller
 
 
         $user->save();
-
+      
         return redirect('profil/'.$user->pseudo);
     }
+    public function search(){
 
-    
+
+        $qpseudo=request('qpseudo');
+        
+        $qage=request('qage');
+        $qgenre=request('qgenre');
+        if (isset($qage)) {
+            settype($qage,"int");
+        }
+        //dd($qage);
+        $qhobby=request('qhobby');
+        //dd($qhobby);
+        $qfumeur=request('qfumeur');
+        //dd($qfumeur);
+        //dd(gettype($qfumeur));
+        $users = DB::table('users')
+                ->when(isset($qpseudo),function($query) use ($qpseudo) {
+                    return $query->where('pseudo','like',$qpseudo.'%');                
+                    })
+                ->when(isset($qgenre),function($query) use ($qgenre) {
+                return $query->where('genre','like',$qgenre);                
+                })
+                ->when(isset($qage),function($query) use ($qage) {
+                    if ($qage != '51') {
+                        return $query->where('age','<=',$qage);
+                    } else {
+                        return $query->where('age','>',$qage);
+                    }
+                })
+                ->when(isset($qhobby),function($query) use ($qhobby) {
+                    return $query->where('hobby',$qhobby);                
+                    })
+                ->when(isset($qfumeur),function($query) use ($qfumeur) {
+                return $query->where('fumeur',$qfumeur);                
+                })
+                ->get();
+        return view("resultats",['users'=>$users]) ;          
+    }
 
 
 }

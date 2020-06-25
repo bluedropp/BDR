@@ -8,10 +8,9 @@
 				<p class="image is-64x64">
 					<img src="/{{$user->PP}}" height="600px" width="600px">
 				</p>
-				<strong class="title is-3"><a href={{ url("/profil/".$user->pseudo) }} style="text-decoration: none"> {{$user->pseudo}}</a></strong>
+				<strong class="title is-3"><a href={{URL('/profil/')}}{{'/'.$user->pseudo}} style="text-decoration: none"> {{$user->pseudo}}</a></strong>
 				</p>
-				<p> Genre : {{$user->genre}} </p>
-				<p> {{$user->age}} ans</small>
+				<small class="subtitle is-5">{{$user->age}} ans</small>
 				<p>Association : {{$user->hobby}}</p>
 			</div>
 			</div>
