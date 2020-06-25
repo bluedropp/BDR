@@ -30,15 +30,12 @@ Route::get('/accueil', 'ProfilController@index');
 
 Route::get('/register', 'ProfilController@create');
 
-<<<<<<< HEAD
 Route::post('/messagerie', 'UserController@create');
 Route::get('/messagerie', 'UserController@index');
 Route::get('/nouveau', function() {
   return view('nouveau');
 });
 
-=======
->>>>>>> fed8fec349ee6adcfa334310bd3fcee39f21f94d
 Auth::routes();
 
 Route::get('/search', function() {
