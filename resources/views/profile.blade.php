@@ -5,6 +5,7 @@
 <div id="wrapper">
     <div class= "container has-texted-centered">
             <h4 class="title is-1 has-text-centered">{{$user->pseudo}}</h4>
+            <p class="subtitle has-text-centered"> {{$user->name}} {{$user->prenom}} </p>
             <figure class="has-text-centered">
             <img src="/{{$user->PP}}" height="600px" width="600px" >
             </figure>
