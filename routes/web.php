@@ -19,7 +19,10 @@ Route::get('/', function () {
 });
 
 Route::get('/profil','ProfilController@profil')->name('profil');
+Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
+  Route::resource('/users', 'UsersController', ['exept'=>['show','create','store']]);
 
+});
 
 Route::get('/profil/{profil}', 'ProfilController@show');
 Route::get('/profil/{profil}/edit','ProfilController@edit');

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use App\Profil;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -52,6 +52,8 @@ class ProfilController extends Controller
             $user->bio = request('bio');
             $user->fumeur = request('fumeur');
             $user->genre = request('genre');
+            $user->pseudo = request('pseudo');
+            $user->hobby = request('hobby');
             $user->PP= $ok;
         }
         else {
@@ -62,11 +64,14 @@ class ProfilController extends Controller
             $user->bio = request('bio');
             $user->fumeur = request('fumeur');
             $user->genre = request('genre');
+            $user->pseudo = request('pseudo');
+            $user->hobby = request('hobby');
         
         }
         $user->save();
         return redirect('profil/'.$user->pseudo);
     }
+    
     public function search(){
 
 

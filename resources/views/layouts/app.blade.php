@@ -167,7 +167,9 @@
                         </a>
                         <a class="dropdown-item" href={{ url("/profil") }}> Messagerie </a>
 
-
+                        <a class="dropdown-item" href={{ route("admin.users.index") }}>
+                          Admin
+                        </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
