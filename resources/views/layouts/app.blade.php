@@ -141,7 +141,7 @@
                   Accueil
                 </a>
                 <div class="navbar-item">
-                  <a class="navbar-item" {{ url("/search") }}>
+                  <a class="navbar-item" href={{ url("/search") }}>
                     Search
                   </a>
 
@@ -165,6 +165,7 @@
                                          document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
+                        <a class="dropdown-item" href={{ url("/profil/".Auth::user()->pseudo."/visites") }}> Visites </a>
 
                         <a class="dropdown-item" href={{ route("admin.users.index") }}>
                           Admin
