@@ -45,7 +45,6 @@ Route::get('/search', function() {
   return view('search');
 });
 
-
 Route::get('/premium', function() {
     return view('premium');
 });
